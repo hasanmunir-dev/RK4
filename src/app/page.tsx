@@ -6,6 +6,7 @@ import RK4Results from "@/components/RK4Results";
 import Footer from "@/components/Footer";
 import { RK4Result } from "@/lib/rk4";
 import { Cpu } from "lucide-react";
+import AlgorithmPanel from "@/components/AlgorithmPanel";
 
 export default function Home() {
   const [result, setResult] = useState<RK4Result | null>(null);
@@ -27,6 +28,8 @@ export default function Home() {
             Enter any <span className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded text-foreground">dy/dx = f(x, y)</span>, set your initial conditions, and get a full step-by-step Runge-Kutta solution instantly.
           </p>
         </div>
+
+        <AlgorithmPanel />
 
         <RK4Form
           onResult={(r, m) => {
